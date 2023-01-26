@@ -1,0 +1,41 @@
+﻿@page
+@model mystore.Pages.mypages.homeModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To MyStore</h1>
+</div>
+<p><a href="addnew">Add New</a></p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.storelist)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.Mobile</td>
+                <td>@item.Email</td>
+                <td>@item.Createdate.ToString()</td>
+                <td>
+                    <button class="btn btn-primary btn-sm">EDIT</button>
+                    <button class="btn btn-danger btn-sm">DELETE</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+    
+</table>
+

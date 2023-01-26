@@ -1,0 +1,55 @@
+﻿@page
+@model mystore.Pages.mypages.addnewModel
+@{
+}
+
+<h3>Enter Data here :</h3>
+<br />
+<form method="post">
+    <div class="row">
+    <fieldset>
+        <legend>Clients Detail :</legend>
+            @if(Model.errormessage != "")
+            {
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>@Model.errormessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                </div>
+            }
+            
+
+        <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Name</span>
+              <input type="text" class="form-control" name="name" value="@Model.data.Name" placeholder="Enter Name" aria-label="Name" aria-describedby="basic-addon1">
+         </div>
+         <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2">Mobile</span>
+                <input type="text" class="form-control" name="mobile" value="@Model.data.Mobile" placeholder="Mobile Number" aria-label="Mobile Number" aria-describedby="basic-addon2">
+         </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Email</span>
+                <input type="text" class="form-control" name="email" value="@Model.data.Email" placeholder="Email Address" aria-label="Email Address" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Address</span>
+                <textarea class="form-control" name="address" value="@Model.data.Address" placeholder="Address" aria-label="Address"></textarea>
+        </div>
+        @if (Model.successmessage != "")
+            {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>@Model.successmessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                    </div>
+            }
+        <div class="row mb-3">
+            <div class="col-sm-3 d-grid offset-sm-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-sm-3 d-grid">
+                <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+            </div>
+        </div>
+            
+    </fieldset>
+    </div>
+</form>
